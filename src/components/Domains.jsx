@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const domains = [
   {
@@ -175,7 +176,18 @@ export default function Domains() {
                     {dom.modules.map((m, i) => (
                       <li key={i} className="flex items-center gap-2.5">
                         <div className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: dom.color }}/>
-                        <span className="text-slate-300 text-[0.75rem] font-mono">{m}</span>
+                        {m.startsWith('M02') ? (
+                            <Link
+                              to="/modules/m02"
+                              className="text-[0.75rem] font-mono hover:underline"
+                              style={{ color: dom.color }}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {m} ↗
+                            </Link>
+                          ) : (
+                            <span className="text-slate-300 text-[0.75rem] font-mono">{m}</span>
+                          )}
                       </li>
                     ))}
                   </ul>

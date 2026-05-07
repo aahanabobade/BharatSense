@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 
 // Module pages
 import M01CropAdvisor from './components/M01CropAdvisor';
+import M02MandiPrice from './components/M02MandiPrice';
+
 
 // ── Landing page (unchanged) ──────────────────────────────────────────────────
 function LandingPage() {
@@ -56,6 +58,8 @@ export default function App() {
       <Routes>
         <Route path="/"              element={<LandingPage />} />
         <Route path="/modules/m01"   element={<M01CropAdvisor />} />
+        <Route path="/modules/m02" element={<M02MandiPrice />} />
+
         {/* Add more module routes here as you build them:      */}
         {/* <Route path="/modules/m02" element={<M02MandiPrice />} /> */}
       </Routes>

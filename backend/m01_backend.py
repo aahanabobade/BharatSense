@@ -17,10 +17,13 @@ from xgboost import XGBRegressor
 # App setup
 # ─────────────────────────────────────────────
 app = FastAPI(
-    title="BharatSense M01 — Crop & Soil Advisor",
+    title="BharatSense M01 - Crop & Soil Advisor",
     description="Predicts irrigation need 72h ahead and yield outlook for Indian farms.",
     version="1.0.0",
 )
+
+router = app.router
+
 
 app.add_middleware(
     CORSMiddleware,
